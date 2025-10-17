@@ -15,12 +15,15 @@ import org.junit.jupiter.api.Test;
 class B_MapCelsiusToFahrenheit {
 
   @Test
-  @Disabled
+
   void convertCelsiusToFahrenheit() {
     final var input = List.of(0, 10, 25, 37, 100);
 
     final var mySolution = EasyNumbersProblemSolution.convertCelsiusToFahrenheit(input);
-    final var yourSolution = List.<Double>of(); // WRITE YOUR IMPLEMENTATION HERE//
+    final var yourSolution = input.stream().map(x ->{ 
+      return ((9.0*x)/5.0)+32.0;
+    }).toList();
+    // WRITE YOUR IMPLEMENTATION HERE//
 
     Assertions.assertEquals(
         mySolution,
